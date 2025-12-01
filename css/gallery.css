@@ -1,0 +1,95 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER + NAV */
+header {
+    background-color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    background:  #3d0d03ff;
+    padding:15px 0;
+
+}
+
+nav a {
+    color: white;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+}
+nav a :hover {
+    color: #e0e0e0 ;
+    text-decoration: underline;
+}
+
+/* GALLERY GRID */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width:960px;
+    height:auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+    background-color: #3d0d03ff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+   .gallery img {
+    max-height: 200px;
+    object-fit: cover;
+   }
+}
+/* HAMBURGER MENU */
+.hamburger img {
+    width: 30px;
+    height: 35px;
+    cursor: pointer;
+    display: none;
+}
+
+#hamburger_checkbox {
+   display: none;
+}
+
+@media (max-width: 700px) {
+
+   .hamburger img {
+       display: block;
+    }
+
+    nav {
+       display: none;
+    }
+
+    #hamburger_checkbox:checked + nav {
+        display: block;
+   }
+}
